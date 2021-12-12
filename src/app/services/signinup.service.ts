@@ -41,6 +41,9 @@ export class SigninupService {
     return localStorage.getItem("token")
   }
 
+  postSip(siparis:any){
+    return this.http.post<any>(this.path+'/islem',siparis)
+  }
 
   //REGİSTER
   register(uye: any) {
