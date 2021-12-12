@@ -142,18 +142,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -311,7 +300,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Ödeme al</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary" >Ödeme al</h6>
                                   
                                 </div>
                                 <!-- Card Body -->
@@ -324,7 +313,7 @@
                                               <label for="" class="mt-5">Ücret</label>
                                               <input type="number"
                                               class="form-control mb-2" name="ucret" id="ucret" placeholder="₺50">
-                                            <button type="button" name="ode" id="ode" class="btn btn-primary btn-lg btn-block">Ödeme al</button>
+                                            <button type="button" name="ode" id="ode" class="btn btn-primary btn-lg btn-block" (click)="ode()" >Ödeme al</button>
                                           </div>
                                     </div>
                                 </div>
@@ -337,38 +326,18 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Son İşlemler</h6>
                                     <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
                                     </div>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
+                                    <div class="chart-pie pb-2">
+                                        <div *ngIf="alert==2">Müşteri:D*** E***<br>Ücret: ₺30
+                                        <hr></div>
+                                        
                                     </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -376,7 +345,12 @@
 
                     <!-- Content Row -->
                     <div class="row">
-
+                        <div class="alert alert-primary" role="alert" id="alert" name="alert" *ngIf="alert==1">
+                            <strong>İstek Gönderildi</strong>
+                        </div>
+                        <div class="alert alert-success" role="alert" id="alert" name="alert" *ngIf="alert==2">
+                            <strong>Ödeme Onaylandı</strong>
+                        </div>
                         <!-- Content Column -->
                         
 

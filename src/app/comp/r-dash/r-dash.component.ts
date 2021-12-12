@@ -9,16 +9,27 @@ import { SigninupService } from 'src/app/services/signinup.service';
 })
 export class RDashComponent implements OnInit {
 
-  constructor(private SigninupService:SigninupService, private router:Router) { }
-
+  constructor(private SigninupService: SigninupService, private router: Router) { }
+  alert = 0;
   ngOnInit(): void {
-    if(this.SigninupService.durum==true){
+    if (this.SigninupService.durum == true) {
       this.router.navigate(['/home'])
     }
   }
-  durum(){
-    
+  durum() {
+
     return this.SigninupService.durum
+  }
+
+  ode()
+  {
+    if(this.alert==2){
+      this.alert=-1;
+      
+    }
+    this.alert=this.alert+1;
+
+
   }
 
 }
